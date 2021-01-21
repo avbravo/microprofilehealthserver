@@ -23,7 +23,7 @@ File file = new File("/");
   long freeSpace = file.getFreeSpace() / 1024 / 1024;
     @Override
     public HealthCheckResponse call() {
-          return  HealthCheckResponse.named("disk")
+          return  HealthCheckResponse.named("@Readiness disk")
                 .withData("freeSpace", freeSpace)
                 .up()
                 .build();
