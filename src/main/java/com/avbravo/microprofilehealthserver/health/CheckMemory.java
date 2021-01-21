@@ -28,7 +28,7 @@ public class CheckMemory implements HealthCheck {
         long memUsed = memBean.getHeapMemoryUsage().getUsed();
         long memMax = memBean.getHeapMemoryUsage().getMax();
   
-        return HealthCheckResponse.named("Memory Check")
+        return HealthCheckResponse.named("@Liveness Memory Check")
                 .withData("memory used", memUsed)
                 .withData("memory max", memMax)
                 .up()

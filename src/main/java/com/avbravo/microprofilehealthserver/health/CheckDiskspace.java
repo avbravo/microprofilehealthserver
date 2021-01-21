@@ -9,7 +9,6 @@ import java.io.File;
 import javax.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
-import org.eclipse.microprofile.health.Liveness;
 import org.eclipse.microprofile.health.Readiness;
 
 /**
@@ -19,7 +18,7 @@ import org.eclipse.microprofile.health.Readiness;
 @Readiness
 @ApplicationScoped
 public class CheckDiskspace implements HealthCheck {
-  private static final String readinessCheck ="Disk Check";
+  private static final String readinessCheck ="@Readiness Disk Check";
 File file = new File("/");
   long freeSpace = file.getFreeSpace() / 1024 / 1024;
     @Override
